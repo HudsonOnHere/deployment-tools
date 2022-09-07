@@ -1,0 +1,58 @@
+{
+    "software": [
+        {
+            "box": [
+
+                {
+                    "source": "https://e3.boxcdn.net/box-installers/desktop/releases/win/Box-x64.msi",
+                    "destination": "C:\\Windows\\Tasks\\Box-x86.msi",
+                    "arguments": "/passive"
+                }
+            ]
+        
+        },
+
+        {
+            "egnyte": [
+                {
+                    "source": "https://egnyte-cdn.egnyte.com/egnytedrive/win/en-us/3.14.4/EgnyteDesktopApp_3.14.4_122.msi",
+                    "destination": "C:\\Windows\\Tasks\\EgnyteDesktopApp_3.14.4_122.msi",
+                    "arguments": "/passive"
+
+                }
+            ]
+        },
+
+        {
+            "slack": [
+                {
+                    "source": "https://slack.com/ssb/download-win64-msi",
+                    "destination": "C:\\Windows\\Tasks\\slack-standalone-4.28.171.0.msi",
+                    "arguments": "/passive"
+                }
+            ]
+        },
+
+        {
+            "webex": [
+                {
+                    "source": "https://binaries.webex.com/WebexTeamsDesktop-Windows-Gold/Webex.msi",
+                    "destination": "C:\\Windows\\Tasks\\Webex.msi",
+                    "arguments": "/passive"
+                }
+            ]
+        }
+       
+    ],
+
+    "vantage": [
+        {                
+            "source": "https://download.lenovo.com/pccbbs/thinkvantage_en/metroapps/Vantage/LenovoCommercialVantage_10.2208.22.0_v1.zip",
+            "destination": "C:\\Windows\\Tasks\\LenovoCommercialVantage_10.2208.22.0_v1.zip",
+            "unzipped_package": "C:\\Windows\\Tasks\\LenovoCommercialVantage_10.2208.22.0_v1",
+            "installer_path": "C:\\Windows\\Tasks\\LenovoCommercialVantage_10.2208.22.0_v1\\setup-commercial-vantage.bat"
+
+
+        }
+    ]
+}
