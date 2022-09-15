@@ -63,8 +63,13 @@ foreach ($i in $Software) {
     Write-Host "Starting a BITS transfer for $i"
     Start-BitsTransfer -DisplayName $i -Source $Source -Destination $OutFile
 
-    Start-Process $OutFile -ArgumentList $Arguments
-    Wait-Process (Get-Process -Name "msiexec").Id
+    # Start-Process $OutFile -ArgumentList $Arguments
+    # Wait-Process (Get-Process -Name "msiexec").Id
+    Write-Host "Starting to install $i"
+    $Process = Start-Process $OutFile -ArgumentList $Arguments -PassThru
+    Wait-Process $Process.Id
+
+    Write-Host "Cleaning up..."
     Remove-Item -Path $OutFile -Force -Confirm:$false -ErrorAction SilentlyContinue
     
 }
@@ -83,7 +88,6 @@ switch ($Vantage) {
         Expand-Archive -Path $OutFile_Zipped -DestinationPath $Outfile_Unzipped
 
         $Process = Start-Process $Installer -PassThru
-        # $Process = Start-Process notepad -PassThru
         Wait-Process $Process.Id
 
         Remove-Item -Path $OutFile_Zipped, $Outfile_Unzipped -Recurse -Force -Confirm:$false -ErrorAction SilentlyContinue
